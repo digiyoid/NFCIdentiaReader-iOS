@@ -61,7 +61,7 @@ Este SDK se encarga de toda la comunicación de bajo nivel, la criptografía y l
 1.  En Xcode, ve a `File > Add Package Dependencies...`.
 2.  Pega la URL de este repositorio:
     ```
-    [https://github.com/tu-usuario/nombre-del-repo-publico.git](https://github.com/tu-usuario/nombre-del-repo-publico.git)
+    [https://github.com/digiyoid/NFCIdentiaReader-iOS]
     ```
 3.  Elige la regla de versión "Up to Next Major" desde `1.0.0` y añade el paquete.
 
