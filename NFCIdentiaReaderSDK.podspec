@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = '1.0.0'
   s.summary          = 'Un SDK para leer documentos de identidad con NFC.'
   s.homepage         = 'https://github.com/digiyoid/NFCIdentiaReader-iOS'
-  spec.license      = { :type => 'Proprietary', :text => 'Copyright (c) 2025 Roshka. All rights reserved.' }
+  s.license      = { :type => 'Proprietary', :text => 'Copyright (c) 2025 Roshka. All rights reserved.' }
   s.author           = { 'Aurelio Figueredo' => 'afigueredo@roshka.com' }
   
   s.source		 = { 
