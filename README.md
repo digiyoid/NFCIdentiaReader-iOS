@@ -93,7 +93,7 @@ Antes de escanear, tu app necesita **tres configuraciones esenciales** en Xcode:
 
 ```swift
 import UIKit
-import NFCDocReader // O el nombre correcto de tu módulo
+import NFCIdentiaReader 
 
 @MainActor
 func startScan() async {
