@@ -1,8 +1,5 @@
 # NFCIdentiaReaderSDK
 
-<p align="center">
-  <img src="URL_DE_TU_IMAGEN_DINAMICA" width="300" alt="NFCIdentiaReaderSDK Hero Image">
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
@@ -24,7 +21,7 @@ Este SDK se encarga de toda la comunicación de bajo nivel, la criptografía y l
 - [Requisitos](#-requisitos)
 - [Instalación](#-instalación)
 - [Guía de Uso](#-guía-de-uso)
-- [Documentación Completa](#-documentación-completa)
+- [Solución de Problemas Comunes](#-solución-de-problemas-comunes)
 - [Soporte](#-soporte)
 - [Autor](#-autor)
 - [Agradecimientos](#-agradecimientos)
@@ -55,13 +52,14 @@ Este SDK se encarga de toda la comunicación de bajo nivel, la criptografía y l
     pod 'NFCIdentiaReaderSDK', '~> 1.0.0'
     ```
 2.  Ejecuta `pod install` en tu terminal.
+  **(Si encuentras un error de "Sandbox" al compilar, revisa la sección de Solución de Problemas Comunes).**
 
 ### Swift Package Manager (SPM)
 
 1.  En Xcode, ve a `File > Add Package Dependencies...`.
 2.  Pega la URL de este repositorio:
     ```
-    [https://github.com/tu-usuario/nombre-del-repo-publico.git](https://github.com/tu-usuario/nombre-del-repo-publico.git)
+    [https://github.com/digiyoid/NFCIdentiaReader-iOS]
     ```
 3.  Elige la regla de versión "Up to Next Major" desde `1.0.0` y añade el paquete.
 
@@ -95,7 +93,7 @@ Antes de escanear, tu app necesita **tres configuraciones esenciales** en Xcode:
 
 ```swift
 import UIKit
-import NFCDocReader // O el nombre correcto de tu módulo
+import NFCIdentiaReader 
 
 @MainActor
 func startScan() async {
@@ -121,13 +119,53 @@ func startScan() async {
     }
 }
 ```
+### 3 Solución de Problemas Comunes
 
+### Error `Sandbox: rsync(...)` o Problemas al Instalar/Actualizar CocoaPods
 
+Estos errores son comunes en versiones recientes de macOS y Xcode. Generalmente se deben a que la versión de Ruby que viene con el sistema operativo es antigua y está protegida, lo que causa conflictos de permisos con CocoaPods.
 
-### 3. Soporte
+La solución definitiva y recomendada es usar **Homebrew** para gestionar la instalación de CocoaPods.
+
+**Pasos para Solucionarlo:**
+
+1.  **Instalar Homebrew (si no lo tienes)**
+
+    Primero, asegúrate de tener Homebrew instalado. Puedes comprobarlo ejecutando `brew --version` en tu terminal. Si no lo tienes, instálalo con el siguiente comando oficial:
+    ```sh
+    /bin/bash -c "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh](https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh))"
+    ```
+
+2.  **Instalar/Actualizar CocoaPods con Homebrew**
+
+    Una vez que Homebrew esté listo, úsalo para instalar CocoaPods. Este único comando se encargará de instalar CocoaPods y todas sus dependencias (como una versión moderna de Ruby) de forma correcta y segura.
+    ```sh
+    brew install cocoapods
+    ```
+
+3.  **Reinstalar los Pods en tu Proyecto**
+
+    Finalmente, navega a la carpeta de tu proyecto en la terminal y ejecuta los siguientes comandos. Esto es crucial para forzar a tu proyecto a que use la nueva versión de CocoaPods y sus scripts actualizados.
+    ```sh
+    pod deintegrate
+    pod install
+    ```
+
+Este proceso resuelve los problemas de permisos y `sandbox` de la forma más limpia y directa.
+
+---
+**Alternativa Rápida**
+
+Como una solución temporal si el método anterior falla, puedes desactivar el "sandboxing" para los scripts en tu proyecto:
+1.  Selecciona el target de tu aplicación.
+2.  Ve a la pestaña **Build Settings**.
+3.  Busca la opción **User Script Sandboxing**.
+4.  Cambia su valor a **No**.
+
+### 4. Soporte
     Para reportes de errores o soporte técnico, por favor abre un "Issue" en este repositorio o contacta al equipo de desarrollo.
 
-### 4.Autor
+### 5.Autor
     Este SDK es desarrollado y mantenido por Roshka.
 
 ### Desarrollador Principal: Aurelio Figueredo
