@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name             = 'NFCIdentiaReaderSDK'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'Un SDK para leer documentos de identidad con NFC.'
   s.homepage         = 'https://github.com/digiyoid/NFCIdentiaReader-iOS'
   s.license      = { :type => 'Proprietary', :text => 'Copyright (c) 2025 Roshka. All rights reserved.' }
   s.author           = { 'Aurelio Figueredo' => 'afigueredo@roshka.com' }
   
   s.source		 = { 
-    :http => 'https://github.com/digiyoid/NFCIdentiaReader-iOS/releases/download/1.0.3/NFCIdentiaReader.xcframework.zip',
-    :sha256 => '46a5e5c17cb6419861bc931b46b7720e4e4fbb4f6ef626af852a2594d3a07319' 
+    :http => 'https://github.com/digiyoid/NFCIdentiaReader-iOS/releases/download/1.0.4/NFCIdentiaReader.xcframework.zip',
+    :sha256 => '62de6e323ba9c4ba216b3e29b4aaf2c8b06bf6d8ef00b1ce5ec8795b735d1f83' 
   }
 
   s.ios.deployment_target = '15.0'
