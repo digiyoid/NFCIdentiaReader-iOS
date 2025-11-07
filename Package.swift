@@ -14,8 +14,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "NFCIdentiaReader",
-            url: "https://github.com/digiyoid/NFCIdentiaReader-iOS/releases/download/1.0.5/NFCIdentiaReader.xcframework.zip",
-            checksum: "2a52573b11b1860115239f6ab71218e077b78104b926c51e90c2e9fd4285a134"
+            url: "https://github.com/digiyoid/NFCIdentiaReader-iOS/releases/download/1.0.6/NFCIdentiaReader.xcframework.zip",
+            checksum: "99000f37e6de47e14675fbfb97621311bcb8ff04467aa7ed6d68f85da38300e2"
         ),
         .binaryTarget(
             name: "OpenSSL",
